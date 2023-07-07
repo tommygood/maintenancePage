@@ -2,11 +2,16 @@
 
 ## Intro 
 
-- redirect site to maintenance page via config settings of web server
+- redirecting the site to maintenance page via config settings of web server
+
+## Installation
+- repo
+  - `cd /var/www/`
+  - `git clone https://github.com/tommygood/maintenancePage.git`
 
 ## Usage
 
-- insert the content of `webServer.conf` into sites config of web server
+- insert the content of `webServer.conf` into the site config of web server(ex. apache2)
   - ex. in `/etc/apache2/sites-avaliable/xxx.conf`
 
       ```conf
@@ -18,10 +23,10 @@
 
         # maintence
         <LocationMatch ".*">
-            Alias "/var/www/fixed/index.html"
+            Alias "/var/www/maintenancePage/index.html"
         </LocationMatch>
         <LocationMatch "/fixed.jpg">
-            Alias "/var/www/fixed/fixed.jpg"
+            Alias "/var/www/maintenancePage/fixed.jpg"
         </LocationMatch>
       </VirtualHost>
       ```
